@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Michael Allen Company | Mockup 2</title>
+<link rel="icon" type="image/png" href="/shared/mac-logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/shared/base.css">
@@ -92,12 +93,13 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px}
 .contact h2{font-size:clamp(40px,6.4vw,96px);max-width:13ch;margin-bottom:32px}
 .contact dl{display:grid;grid-template-columns:90px 1fr;gap:8px 16px;margin:32px 0 0;max-width:560px}.contact dd{margin:0;color:var(--ink)}.contact dt{color:var(--dim)}
 .back{position:fixed;left:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:60;background:#0E2C52;color:#fff;font:600 14px system-ui,sans-serif;padding:0 16px;min-height:44px;display:inline-flex;align-items:center;border-radius:22px;text-decoration:none;border:1px solid rgba(255,255,255,.25)}
+.maclogo{display:block;height:auto;border-radius:2px}
 </style>
 </head>
 <body data-mock="Mockup 2: Immersive 3D">
 <canvas id="gl" aria-hidden="true"></canvas><div class="vig"></div>
 <header><div class="wrap">
-  <a class="logo" href="#/">MICHAEL ALLEN<span>.</span></a>
+  <a class="logo" href="#/"><img class="maclogo" src="/shared/mac-logo.png" alt="Michael Allen Company" width="48" height="48"></a>
   <nav class="pill" aria-label="Primary"><a href="#/" data-nav="company">Company</a><a href="#/products" data-nav="hub">Digital Products</a><a href="#/wayfinder" data-nav="wayfinder">WayFinder Horizon</a></nav>
   <a class="cta" href="#contact">Contact Us</a>
 </div></header>

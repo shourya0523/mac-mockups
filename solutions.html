@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Michael Allen Company | Mockup 4</title>
+<link rel="icon" type="image/png" href="/shared/mac-logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;800&family=Red+Hat+Text:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/shared/base.css">
@@ -85,12 +86,31 @@ footer h3{color:#fff;font-size:16px;margin-bottom:12px}footer ul{list-style:none
 footer .legal{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.12);padding-top:18px;font-size:14px}
 @media (max-width:760px){footer .wrap{grid-template-columns:1fr}}
 .back{position:fixed;left:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:60;background:var(--navy);color:#fff;font:600 14px system-ui,sans-serif;padding:0 16px;min-height:44px;display:inline-flex;align-items:center;border-radius:22px;text-decoration:none;border:1px solid rgba(255,255,255,.25)}
+/* Motion layer, modelled on Inpharmation (Divi): scroll entrances, parallax hex network, count-ups, hover lifts */
+.shero{position:relative;overflow:hidden}.shero>.wrap{position:relative;z-index:1}
+.hexbg{position:absolute;inset:-20% 0;pointer-events:none;opacity:.9;will-change:transform;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='168' height='194' viewBox='0 0 168 194'%3E%3Cg fill='none' stroke='%237FB4E0' stroke-opacity='.16' stroke-width='1.2'%3E%3Cpath d='M84 2l80 46v92l-80 46-80-46V48z'/%3E%3Cpath d='M84 2v46M164 140l-40-23M4 140l40-23'/%3E%3C/g%3E%3Cg fill='%237FB4E0' fill-opacity='.35'%3E%3Ccircle cx='84' cy='2' r='3'/%3E%3Ccircle cx='164' cy='140' r='3'/%3E%3Ccircle cx='4' cy='48' r='3'/%3E%3C/g%3E%3C/svg%3E");background-size:168px 194px;-webkit-mask-image:linear-gradient(100deg,transparent 30%,#000 75%);mask-image:linear-gradient(100deg,transparent 30%,#000 75%)}
+.motion .hexbg{animation:hexdrift 40s linear infinite}
+@keyframes hexdrift{to{background-position:168px -194px}}
+.motion .rv{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .8s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0s)}
+.motion .rv.rv-l{transform:translateX(-48px)}.motion .rv.rv-r{transform:translateX(48px)}.motion .rv.rv-f{transform:none}
+.motion .rv.in{opacity:1;transform:none}
+.tile{transition:transform .25s ease,box-shadow .25s ease}.tile:hover{transform:translateY(-6px);box-shadow:0 24px 36px -22px rgba(0,0,0,.55)}
+.tile span::after,.more::after,.call a::after{content:"→";display:inline-block;margin-left:8px;transition:transform .2s ease}
+.tile:hover span::after,.more:hover::after,.call a:hover::after{transform:translateX(5px)}
+.more,.call a{transition:background-color .2s,transform .2s}.more:hover,.call a:hover{transform:translateY(-2px)}.more:hover{background:#00476F}
+.vis{transition:transform .3s ease,box-shadow .3s ease}.vis:hover{transform:translateY(-4px);box-shadow:0 30px 48px -28px rgba(10,35,66,.45)}
+.vrow{transition:padding-left .2s,background-color .2s}.vrow:hover{padding-left:8px;background:var(--wash)}
+.stack a{transition:transform .3s ease,box-shadow .3s}.stack a:hover{z-index:5;box-shadow:0 28px 40px -22px rgba(10,35,66,.5)}
+.stack a:nth-child(1):hover{transform:rotate(-6deg) translateY(-14px)}.stack a:nth-child(2):hover{transform:rotate(-2deg) translateY(-14px)}.stack a:nth-child(3):hover{transform:rotate(2deg) translateY(-14px)}.stack a:nth-child(4):hover{transform:rotate(6deg) translateY(-14px)}
+.flow span{transition:transform .2s,background-color .2s}.flow span:hover{transform:translateY(-2px);background:#D3E4F1}
+@media (prefers-reduced-motion:reduce){.hexbg{animation:none!important;transform:none!important}.tile,.vis,.more,.call a,.vrow,.stack a,.flow span,.tile span::after,.more::after,.call a::after{transition:none!important}}
+.maclogo{display:block;height:auto;border-radius:2px}
 </style>
 </head>
 <body data-mock="Mockup 4: Solutions layout">
 <div class="topbar"><div class="wrap"><a href="tel:+12036625100">+1.203.662.5100</a><a href="mailto:info@michaelallencompany.com">info@michaelallencompany.com</a><a href="#">Careers</a></div></div>
 <header class="main"><div class="wrap">
-  <a class="logo" href="#/"><b>MICHAEL ALLEN</b><span>COMPANY</span></a>
+  <a class="logo" href="#/"><img class="maclogo" src="/shared/mac-logo.png" alt="Michael Allen Company" width="56" height="56"></a>
   <ul class="menu" aria-label="Primary">
     <li><a href="#/" data-nav="company">Home</a></li>
     <li class="x"><a href="#">About Us</a></li>
@@ -213,6 +233,39 @@ $('wStats').textContent=`${M.tas.length} TAs Profiled · `+M.storefront.stats.ma
 $('wDefs').innerHTML=M.pillarKeys.map(k=>`<li>${chk}<span><b>${M.pillarLabels[k]}.</b> ${M.storefront.tips[k]}</span></li>`).join('');
 $('stack').innerHTML=M.tas.map(t=>`<a href="#/profile/${t.id}"><h3>${t.abbr}</h3><b>${t.masm}</b><small>MASM score</small></a>`).join('');
 $('sSel').innerHTML=M.tas.map(t=>`<option>${t.name}</option>`).join('');
+})();
+</script>
+<script>
+/* Motion: reveal on scroll, parallax hero, count-ups. Skipped entirely under prefers-reduced-motion. */
+(function(){
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+document.querySelectorAll('.shero').forEach(h=>{const b=document.createElement('div');b.className='hexbg';b.setAttribute('aria-hidden','true');h.prepend(b)});
+if(reduce||!('IntersectionObserver' in window))return;
+document.documentElement.classList.add('motion');
+const done=e=>{e.target.classList.remove('rv','rv-l','rv-r','rv-f','in');e.target.style.removeProperty('--d')};
+const count=el=>{const m=el.textContent.trim().match(/^(\D*)(\d+)(\D*)$/);if(!m||el.dataset.counted)return;el.dataset.counted=1;
+  const to=+m[2],t0=performance.now(),D=1400;const step=t=>{const p=Math.min(1,(t-t0)/D),v=Math.round(to*(1-Math.pow(1-p,3)));el.textContent=m[1]+v+m[3];if(p<1)requestAnimationFrame(step)};requestAnimationFrame(step)};
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const el=e.target;io.unobserve(el);
+  if(el.matches('[data-count]')){count(el);return}
+  el.getBoundingClientRect();el.classList.add('in');
+  /* drop the reveal classes once finished so the element's own hover transitions work again */
+  const d=parseFloat(el.style.getPropertyValue('--d'))||0;setTimeout(()=>done({target:el}),(d+.9)*1000)}),{rootMargin:'0px 0px -8% 0px',threshold:.12});
+const mark=(sel,cls,stagger)=>document.querySelectorAll(sel).forEach((el,i)=>{if(el.dataset.rv||el.closest('[hidden]'))return;el.dataset.rv=1;el.classList.add('rv');if(cls)el.classList.add(cls);if(stagger)el.style.setProperty('--d',(i%6)*stagger+'s');io.observe(el)});
+const scan=()=>{
+  mark('.shero h1,.shero .intro,.shero .crumb','',0);
+  document.querySelectorAll('.tiles').forEach(t=>{[...t.children].forEach((c,i)=>{if(c.dataset.rv||c.closest('[hidden]'))return;c.dataset.rv=1;c.classList.add('rv');c.style.setProperty('--d',(.15+i*.09)+'s');io.observe(c)})});
+  mark('.what>div','',.12);
+  document.querySelectorAll('.sol .g').forEach(g=>{if(g.closest('[hidden]'))return;const kids=[...g.children],flip=g.parentElement.classList.contains('sol')&&g.parentElement.classList.contains('flip');
+    kids.forEach(k=>{if(k.dataset.rv)return;k.dataset.rv=1;const vis=k.classList.contains('vis');k.classList.add('rv',(vis!==flip)?'rv-r':'rv-l');if(vis)k.style.setProperty('--d','.12s');io.observe(k)})});
+  mark('.sample .stack,.sample form.req','',.12);
+  mark('.call h2,.call a','rv-f',.1);
+  mark('[data-view]:not([hidden]) [data-store]>*','',.08);
+  document.querySelectorAll('#cStats b,.badge,.stack b').forEach(b=>{if(b.dataset.cw||b.closest('[hidden]'))return;b.dataset.cw=1;b.setAttribute('data-count','');io.observe(b)});
+};
+scan();window.onMacRoute=()=>requestAnimationFrame(scan);
+/* parallax: hex layer drifts at ~35% of scroll speed while the hero is on screen */
+let ticking=false;const par=()=>{ticking=false;document.querySelectorAll('[data-view]:not([hidden]) .hexbg').forEach(b=>{const r=b.parentElement.getBoundingClientRect();if(r.bottom<0)return;b.style.transform='translate3d(0,'+(-r.top*.35).toFixed(1)+'px,0)'})};
+addEventListener('scroll',()=>{if(!ticking){ticking=true;requestAnimationFrame(par)}},{passive:true});
 })();
 </script>
 </body>
