@@ -1,4 +1,4 @@
-/* Content sourced verbatim/near-verbatim from: michaelallencompany.com (company), MAC Digital Products Hub.html (hub),
+/* Content sourced verbatim/near-verbatim from: michaelallencompany.com (company, incl. live stat counters), MAC Digital Products Hub.html (hub),
    WayFinder Storefront v05.html (storefront), and the latest 1-pagers: NSCLC v06, HF v05, RA v06, OBS v06. */
 window.MAC = {
 company:{
@@ -20,11 +20,11 @@ company:{
     {t:`Experts in Analytics and Integration`,d:`Worked with 85% of the Top 20 Global Pharma Companies.`}],
   stats:[
     {v:`0%`,l:`reliance on off-shore resources`},
-    {v:`[X]%`,l:`consulting staff with degrees from ivy-league schools`},
-    {v:`[X]%`,l:`consulting staff with advanced degrees (MA+)`},
-    {v:`[X]%`,l:`projects from repeat customers`},
-    {v:`[X]%`,l:`projects managed by Senior Leadership`},
-    {v:`[X] yrs`,l:`average bio-pharma experience at executive level`}],
+    {v:`100%`,l:`consulting staff with degrees from ivy-league schools`},
+    {v:`100%`,l:`consulting staff with advanced degrees (MA+)`},
+    {v:`90%`,l:`projects from repeat customers`},
+    {v:`100%`,l:`projects managed by Senior Leadership`},
+    {v:`22`,l:`average bio-pharma experience at executive level`}],
   contact:{email:`info@michaelallencompany.com`,phone:`+1.203.662.5100`,fax:`+1.203.662.5180`,address:`30 Old Kings Highway South, Darien, CT 06820`}
 },
 hub:{
