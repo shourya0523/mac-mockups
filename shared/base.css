@@ -104,3 +104,11 @@
 .pf-legal{font-size:13px;color:var(--c-muted);margin-top:20px}
 @media (max-width:900px){.pf-pillars,.pf-stats,.pf-radar{grid-template-columns:1fr 1fr}.pf-two,.pf-cards,.pf-cards.three{grid-template-columns:1fr}}
 @media (max-width:520px){.pf-pillars,.pf-stats,.pf-radar{grid-template-columns:1fr}}
+/* Motion (shared/motion.js). Only applies once the script adds .motion to <html>, so content is visible without JS. */
+.motion .rv{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .85s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0s)}
+.motion .rv.rv-left{transform:translateX(-48px)}.motion .rv.rv-right{transform:translateX(48px)}.motion .rv.rv-fade{transform:none}
+.motion .rv.rv-deal{transform:translateY(90px) rotate(-5deg);transform-origin:50% 100%}
+.motion .rv.in{opacity:1;transform:none}
+.rule{position:relative}.rule::before{content:"";position:absolute;left:0;right:0;top:calc(-1 * var(--rule-h,1px));height:var(--rule-h,1px);background:var(--rule-c,var(--c-line));transform-origin:0 50%;transition:transform 1s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0s)}
+.motion .rv.rule::before{transform:scaleX(0)}.motion .rv.rule.in::before{transform:scaleX(1)}
+.motion .rv.rule{opacity:1;transform:none;border-top-color:transparent}.motion .rv.rule>*{opacity:0;transform:translateY(14px);transition:opacity .6s ease calc(var(--d,0s) + .25s),transform .7s cubic-bezier(.2,.7,.2,1) calc(var(--d,0s) + .25s)}.motion .rv.rule.in>*{opacity:1;transform:none}

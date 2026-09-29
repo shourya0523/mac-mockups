@@ -37,7 +37,7 @@ h1,h2,h3{font-family:var(--f-display);color:var(--c-ink);font-weight:400;margin:
 .dek{font-size:21px;color:var(--c-muted);max-width:54ch;margin:26px auto 38px}
 .ctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
 .crumb{font-size:15px;color:var(--c-muted);margin-bottom:30px}
-.folio{margin:80px auto 0;max-width:1060px;display:grid;grid-template-columns:repeat(4,1fr);gap:22px;align-items:end;padding:0 32px}
+.folio{margin:64px auto 0;max-width:1060px;display:grid;grid-template-columns:repeat(4,1fr);gap:22px;align-items:end;padding:0 32px}
 .sheet{display:block;text-decoration:none;background:#fff;border:1px solid var(--c-line);padding:22px 20px 26px;text-align:left;box-shadow:0 1px 0 var(--c-line),0 24px 40px -28px rgba(10,35,66,.35);color:var(--c-text);transition:transform .2s}
 .sheet:hover{transform:translateY(-6px)}.sheet:nth-child(2),.sheet:nth-child(3){transform:translateY(-24px)}.sheet:nth-child(2):hover,.sheet:nth-child(3):hover{transform:translateY(-30px)}
 .sheet .k{font-size:12.5px;color:var(--c-muted);border-bottom:1px solid var(--c-line);padding-bottom:9px;margin-bottom:12px;display:flex;justify-content:space-between}
@@ -84,6 +84,42 @@ section.sec{padding:96px 0}
 .sc-ring b{font-weight:400}
 .back{position:fixed;left:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:60;background:var(--c-ink);color:#fff;font:600 14px system-ui,sans-serif;padding:0 16px;min-height:44px;display:inline-flex;align-items:center;border-radius:22px;text-decoration:none}
 .maclogo{display:block;height:auto;border-radius:2px}
+/* Logo deconstruction. The MAC mark is a navy square with its top-right corner cut out, and a light-blue square
+   sitting in that notch, nudged up and right by a small gutter. Hero: the mark drawn as a hairline frame that
+   comes apart on scroll. Section heads and report sheets: small copies of the corner. Contact band: the mark
+   reassembled at full scale. */
+:root{--mac-navy:#12263F;--mac-blue:#95B3D7}
+.hero{padding-top:64px}
+.plate{--n:72px;--g:10px;position:relative;padding:60px 56px 52px}
+.plate h1{position:relative}
+.plate-line{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none}
+.plate-line path{fill:none;stroke:var(--c-ink);stroke-width:1;vector-effect:non-scaling-stroke;stroke-dashoffset:calc(var(--p,0) * var(--len,0px) * .75);opacity:calc(1 - var(--p,0) * .5)}
+.plate-sq{position:absolute;right:calc(-1 * var(--g));top:calc(-1 * var(--g));width:var(--n);height:var(--n);background:var(--mac-blue);
+ transform:translate(calc(var(--p,0) * 150px),calc(var(--p,0) * -120px)) rotate(calc(var(--p,0) * 20deg))}
+.motion .plate-line path{animation:drawline 1.8s cubic-bezier(.6,.05,.3,1) both}
+@keyframes drawline{from{stroke-dashoffset:var(--len,0px)}to{stroke-dashoffset:0}}
+.motion .plate-sq{animation:land 1s cubic-bezier(.3,1.35,.5,1) .9s both}
+@keyframes land{from{transform:translate(160px,-140px) rotate(35deg) scale(.5);opacity:0}to{transform:none;opacity:1}}
+.plate.scrub .plate-line path,.plate.scrub .plate-sq{animation:none}
+@media (max-width:860px){.plate{--n:44px;--g:7px;padding:56px 22px 44px}}
+.st h2{position:relative;padding-top:40px}
+.st h2::before{content:"";position:absolute;left:0;top:0;width:24px;height:24px;background:var(--mac-navy);clip-path:polygon(0 0,16px 0,16px 8px,100% 8px,100% 100%,0 100%)}
+.st h2::after{content:"";position:absolute;left:17px;top:-1px;width:8px;height:8px;background:var(--mac-blue);transition:transform .8s cubic-bezier(.3,1.4,.5,1) .35s,opacity .4s ease .35s}
+.motion .st.rv:not(.in) h2::after{transform:translate(16px,-16px) rotate(45deg);opacity:0}
+.contact .st h2::before,.contact .st h2::after{display:none}
+.sheet{position:relative;padding-top:30px;--sn:22px;--sg:4px}
+.sheet::before{content:"";position:absolute;top:-1px;right:-1px;width:var(--sn);height:var(--sn);background:#fff;border-left:1px solid var(--c-line);border-bottom:1px solid var(--c-line)}
+.sheet::after{content:"";position:absolute;top:calc(-1px - var(--sg));right:calc(-1px - var(--sg));width:var(--sn);height:var(--sn);background:var(--mac-blue);transition:transform .35s cubic-bezier(.3,1.4,.5,1)}
+.sheet:hover::after{transform:translate(7px,-7px) rotate(8deg)}
+.contact{--n:104px;--g:12px;background:var(--mac-navy);clip-path:polygon(0 0,calc(100% - var(--n) - var(--g)) 0,calc(100% - var(--n) - var(--g)) var(--n),100% var(--n),100% 100%,0 100%);transition:clip-path .8s cubic-bezier(.6,.05,.3,1)}
+.dock{position:relative;height:0;z-index:2;--n:104px;--g:12px}
+.dock::before{content:"";position:absolute;right:0;top:0;width:calc(var(--n) + var(--g));height:var(--n);background:var(--dock-bg,#fff)}
+.dock span{position:absolute;right:0;top:calc(-1 * var(--g));width:var(--n);height:var(--n);background:var(--mac-blue);transition:transform 1.1s cubic-bezier(.3,1.25,.5,1) .45s,opacity .5s ease .45s}
+.motion .contact:not(.dock-in){clip-path:polygon(0 0,100% 0,100% 0,100% 0,100% 100%,0 100%)}
+.motion .dock:not(.dock-in) span{transform:translate(120px,-260px) rotate(40deg) scale(.6);opacity:0}
+@media (max-width:860px){.contact,.dock{--n:60px;--g:8px}}
+.sheet,.offer article,.grid3 div{transition:transform .25s ease}
+@media (prefers-reduced-motion:reduce){.plate-sq{transform:none}.plate-line path{stroke-dashoffset:0;opacity:1}.sheet::after,.st h2::after,.dock span,.contact{transition:none}}
 </style>
 </head>
 <body data-mock="Mockup 3: Classic, modernised">
@@ -97,11 +133,12 @@ section.sec{padding:96px 0}
 </header>
 <main>
 <div data-view="company">
-  <section class="hero"><div class="wrap">
+  <section class="hero"><div class="wrap"><div class="plate" id="plate">
+    <svg class="plate-line" aria-hidden="true" focusable="false"><path/></svg><span class="plate-sq" aria-hidden="true"></span>
     <h1>We derive deeper insights to help healthcare companies make better decisions.</h1>
     <p class="dek">From pipeline to inline, we empower brands to reach their full potential by transforming research and data into real insights, driving long-term impact.</p>
     <div class="ctas"><a class="btn btn-d" href="#difference">Our Difference</a><a class="btn btn-p" href="#contact">Request a bid</a></div>
-  </div>
+  </div></div>
   <div class="folio" id="folio" aria-label="WayFinder Horizon profiles"></div></section>
   <div class="band"><section class="sec" style="padding-top:32px"><div class="wrap">
     <div class="grid3" id="cPillars" style="grid-template-columns:repeat(4,1fr)"></div>
@@ -149,6 +186,7 @@ section.sec{padding:96px 0}
 
 <div data-view="profile" hidden><div class="pf-root"></div></div>
 </main>
+<div class="dock" aria-hidden="true"><span></span></div>
 <section class="contact" id="contact"><div class="wrap">
   <div><h2>Contact Us</h2><p style="font-size:20px;margin-top:18px;max-width:44ch">Explore our difference, or request a bid for your project needs.</p></div>
   <dl id="cDl"></dl>
@@ -168,6 +206,43 @@ $('hFeats').innerHTML=M.hub.arch.feats.map(f=>`<div><h3>${f.t}</h3><p>${f.d}</p>
 $('wFacts').innerHTML=`<div><span>TAs Profiled</span><b>${M.tas.length}</b></div>`+M.storefront.stats.map(s=>`<div><span>${s.l}</span><b>${s.v}</b></div>`).join('');
 $('wDefs').innerHTML=M.pillarKeys.map(k=>`<div><h3>${M.pillarLabels[k]}</h3><p>${M.storefront.tips[k]}</p></div>`).join('');
 $('cDl').innerHTML=`<dt>Email</dt><dd><a href="mailto:${C.contact.email}">${C.contact.email}</a></dd><dt>Phone</dt><dd>${C.contact.phone}</dd><dt>Fax</dt><dd>${C.contact.fax}</dd><dt>Address</dt><dd>${C.contact.address}</dd>`;
+})();
+</script>
+<script src="/shared/motion.js"></script>
+<script>
+(function(){
+const plate=document.getElementById('plate'),path=plate.querySelector('path');
+/* The frame is the logo's outline: a rectangle with the top-right n x n corner cut out. Redrawn on resize. */
+function frame(){const w=plate.offsetWidth,h=plate.offsetHeight,n=parseFloat(getComputedStyle(plate).getPropertyValue('--n'));
+ path.setAttribute('d',`M.5 .5H${w-n}V${n}H${w-.5}V${h-.5}H.5Z`);const len=path.getTotalLength();
+ path.style.strokeDasharray=len;plate.style.setProperty('--len',len+'px')}
+frame();addEventListener('resize',frame);
+const m=MACMotion({items:[
+  ['.plate h1',{delay:.35}],['.plate .dek',{delay:.5}],['.plate .ctas',{delay:.62}],
+  ['.folio',{group:true,from:'deal',delay:.1,stagger:.12}],
+  ['.st',{}],
+  ['.grid3,.seq',{group:true,rule:true,stagger:.08}],
+  ['.offer article',{stagger:.1}],
+  ['.figs',{group:true,stagger:.07}],
+  ['.tp .crumb,.tp h1,.tp .dek',{stagger:.1}],
+  ['.facts',{group:true,from:'fade',delay:.3,stagger:.1}],
+  ['.contact .wrap>*',{delay:.2,stagger:.12}]
+ ],count:'.figs b,.facts b'});
+if(m.reduce)return;
+/* Scroll: the blue square breaks away and the frame line retracts as the hero leaves the screen */
+setTimeout(()=>plate.classList.add('scrub'),2100);
+let tick=false;const upd=()=>{tick=false;if(plate.closest('[hidden]'))return;const r=plate.getBoundingClientRect();
+ plate.style.setProperty('--p',Math.min(1,Math.max(0,(90-r.top)/(r.height*1.1))).toFixed(3))};
+addEventListener('scroll',()=>{if(!tick){tick=true;requestAnimationFrame(upd)}},{passive:true});
+/* Contact band: the notch opens and the square flies in to dock, reassembling the mark */
+const ct=document.getElementById('contact'),dock=document.querySelector('.dock');
+/* the notch gutter shows the colour of whichever section sits above the band on the current view */
+const bg=()=>{const r=ct.getBoundingClientRect();if(r.top<2||r.top>innerHeight)return;
+ let el=document.elementFromPoint(innerWidth-160,r.top-2),c='#fff';
+ for(;el&&el!==document.documentElement;el=el.parentElement){const x=getComputedStyle(el).backgroundColor;if(x!=='rgba(0, 0, 0, 0)'&&x!=='transparent'){c=x;break}}
+ dock.style.setProperty('--dock-bg',c)};
+addEventListener('scroll',()=>requestAnimationFrame(bg),{passive:true});
+new IntersectionObserver((es,o)=>es.forEach(e=>{if(e.isIntersecting){ct.classList.add('dock-in');dock.classList.add('dock-in');o.disconnect()}}),{threshold:.35}).observe(ct);
 })();
 </script>
 </body>

@@ -237,6 +237,10 @@ window.onMacRoute=function(view,id){
  [...root.querySelectorAll('[data-shape]'),$('contact')].forEach(sec=>trig.push(ScrollTrigger.create({trigger:sec,start:'top 55%',end:'bottom 45%',onToggle:s=>{if(!s.isActive)return;const sh=sec.dataset.shape;sh==='lobes'?morph('lobe-'+M.tas[sel].id,lobes(M.tas[sel])):morph(sh)}})));
  root.querySelectorAll('[data-count]').forEach(el=>trig.push(ScrollTrigger.create({trigger:el,start:'top 85%',once:true,onEnter:()=>{const o={v:0};gsap.to(o,{v:+el.dataset.count,duration:reduce?0:1.6,ease:'power2.out',onUpdate:()=>el.textContent=Math.round(o.v)})}})));
  if(!reduce){gsap.fromTo(root.querySelectorAll('.big .ln>span'),{yPercent:110},{yPercent:0,duration:1.1,ease:'power4.out',stagger:.1});}
+ /* entrance reveals for everything outside the pinned horizontal track */
+ if(!reduce){const els=[...root.querySelectorAll('.label,.lede,.row,section h2:not(.big),.force,.glass,#wPeaks a,.pick button,.sf-card,.pf-sec')].concat([...document.querySelectorAll('#contact .wrap>*')]).filter(e=>!e.closest('.track'));
+  gsap.set(els,{autoAlpha:0,y:44});
+  ScrollTrigger.batch(els,{start:'top 90%',once:true,onEnter:b=>gsap.to(b,{autoAlpha:1,y:0,duration:1,ease:'power3.out',stagger:.09,overwrite:true})}).forEach(t=>trig.push(t));}
  if(view==='hub'){mm=gsap.matchMedia();mm.add('(min-width: 861px) and (prefers-reduced-motion: no-preference)',()=>{const tr=root.querySelector('.track');gsap.to(tr,{x:()=>-(tr.scrollWidth-innerWidth),ease:'none',scrollTrigger:{trigger:root.querySelector('.hs'),pin:true,scrub:1,end:()=>'+='+(tr.scrollWidth-innerWidth),invalidateOnRefresh:true}})})}
  requestAnimationFrame(()=>ScrollTrigger.refresh());
 };

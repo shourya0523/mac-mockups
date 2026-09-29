@@ -96,6 +96,15 @@ footer a{color:#C3D0DE}
 [data-view="profile"]{background:var(--wash)}
 .back{position:fixed;left:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:60;background:var(--deep);color:#fff;font:600 14px system-ui,sans-serif;padding:0 16px;min-height:44px;display:inline-flex;align-items:center;border-radius:22px;text-decoration:none;border:1px solid rgba(255,255,255,.25)}
 .maclogo{display:block;height:auto;border-radius:2px}
+/* Motion (restrained, per competitor norms): drifting hero grid, reveals, count-ups, drawn rules, hover lifts */
+.motion .hero::after{animation:griddrift 60s linear infinite}
+@keyframes griddrift{to{background-position:48px 48px,48px 48px}}
+.four div{--rule-c:var(--c-accent);--rule-h:3px}
+.diff article,.prod,.defs div,.preview{transition:transform .25s ease,box-shadow .25s ease}
+.diff article:hover,.prod:hover,.defs div:hover{transform:translateY(-4px);box-shadow:0 20px 32px -24px rgba(10,35,66,.4)}
+.preview:hover{transform:translateY(-4px)}
+.kpis div{transition:background-color .2s}.kpis div:hover{background:#123463}
+@media (prefers-reduced-motion:reduce){.diff article,.prod,.defs div,.preview,.kpis div{transition:none}}
 </style>
 </head>
 <body data-mock="Mockup 1: Industry standard">
@@ -210,6 +219,19 @@ $('wfKpis').innerHTML=`<div><b>${M.tas.length}</b><span>TAs Profiled</span></div
 $('wfDefs').innerHTML=M.pillarKeys.map(k=>`<div><h3>${M.pillarLabels[k]}</h3><p>${M.storefront.tips[k]}</p></div>`).join('');
 $('contactDl').innerHTML=`<dt>Email</dt><dd><a href="mailto:${C.contact.email}">${C.contact.email}</a></dd><dt>Phone</dt><dd>${C.contact.phone}</dd><dt>Fax</dt><dd>${C.contact.fax}</dd><dt>Address</dt><dd>${C.contact.address}</dd>`;
 })();
+</script>
+<script src="/shared/motion.js"></script>
+<script>
+MACMotion({items:[
+  ['.hero .crumb,.hero h1,.hero .wrap>div>p,.hero .ctas',{stagger:.08}],
+  ['.kpis',{group:true,from:'fade',delay:.3,stagger:.1}],
+  ['.four',{group:true,rule:true,stagger:.1}],
+  ['.sh',{}],
+  ['.diff,.products,.defs,.mods',{group:true,stagger:.07}],
+  ['.stats .wrap',{group:true,from:'fade',stagger:.08}],
+  ['.promo .preview',{from:'right'}],
+  ['.contact .wrap>*',{stagger:.1}]
+ ],count:'.kpis b,.stats b'});
 </script>
 </body>
 </html>
