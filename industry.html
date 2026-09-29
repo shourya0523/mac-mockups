@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Michael Allen Company | Mockup 1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/shared/base.css">
+<style>
+:root{--c-ink:#0A2342;--c-accent:#005A8D;--r:10px;--f-display:'Schibsted Grotesk',system-ui,sans-serif;--navy:#0A2342;--deep:#051324;--orange:#EF8200;--wash:#F3F6F9;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 90px)}
+body{margin:0;font:16.5px/1.6 'Schibsted Grotesk',system-ui,-apple-system,'Segoe UI',sans-serif;color:var(--c-text);background:#fff;-webkit-font-smoothing:antialiased}
+:focus-visible{outline:3px solid var(--orange);outline-offset:2px}
+a{color:var(--c-accent)}
+h1,h2,h3{color:var(--c-ink);line-height:1.15;margin:0}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+.btn{display:inline-flex;align-items:center;min-height:46px;padding:0 22px;border-radius:6px;font:600 15px inherit;font-family:inherit;text-decoration:none;border:1.5px solid transparent;cursor:pointer}
+.btn-o{background:var(--orange);color:#1b1000}.btn-o:hover{background:#ff9624}
+.btn-g{border-color:currentColor;color:inherit;background:transparent}
+.util{background:var(--deep);color:#B9C6D6;font-size:13px}
+.util .wrap{display:flex;justify-content:flex-end;gap:22px;height:34px;align-items:center}
+.util a{color:#B9C6D6;text-decoration:none}
+header.nav{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--c-line)}
+header.nav .wrap{display:flex;align-items:center;height:72px;gap:28px}
+.logo{display:flex;flex-direction:column;line-height:1;text-decoration:none;color:var(--navy)}
+.logo b{font-size:17px;letter-spacing:.14em;font-weight:800}.logo span{font-size:10.5px;letter-spacing:.3em;color:var(--c-muted);margin-top:4px}
+.links{display:flex;gap:2px;flex:1;list-style:none;margin:0;padding:0}
+.links a{font-weight:500;font-size:15px;color:var(--c-ink);padding:0 12px;min-height:44px;display:inline-flex;align-items:center;border-radius:6px;text-decoration:none}
+.links a:hover{background:var(--wash)}
+.links a[aria-current="page"]{color:var(--c-accent);box-shadow:inset 0 -2px 0 var(--c-accent)}
+@media (max-width:1060px){.links li.sec{display:none}}
+@media (max-width:760px){.links{display:none}.util{display:none}}
+.hero{background:var(--navy);color:#C4D2E2;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:48px 48px;pointer-events:none}
+.hero .wrap{position:relative;z-index:1;display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center;padding-top:80px;padding-bottom:88px}
+.hero h1{color:#fff;font-size:clamp(34px,4.4vw,56px);letter-spacing:-.03em;margin-bottom:20px}
+.hero p{font-size:19px;max-width:54ch;margin:0 0 30px}
+.hero .btn-g{color:#fff}
+.hero .ctas{display:flex;gap:12px;flex-wrap:wrap}
+.crumb{font-size:14px;margin-bottom:22px}.crumb a{color:#fff}
+.kpis{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,.14);border-radius:10px;overflow:hidden}
+.kpis div{background:#0E2C52;padding:22px}
+.kpis b{display:block;font-size:32px;color:#fff;letter-spacing:-.02em}.kpis span{font-size:14px}
+@media (max-width:900px){.hero .wrap{grid-template-columns:1fr}}
+.preview{background:#fff;border-radius:10px;color:var(--c-text);box-shadow:0 30px 60px -20px rgba(0,0,0,.45);overflow:hidden}
+.pv-bar{padding:12px 16px;border-bottom:1px solid var(--c-line);font-size:13px;color:var(--c-muted)}
+.pv-body{padding:22px}
+.pv-head{display:flex;justify-content:space-between;gap:16px;align-items:flex-start;margin-bottom:14px}
+.pv-head h3{font-size:19px}.pv-head small{display:block;color:var(--c-muted);font-size:13px;margin-top:4px}
+.pv-row{display:grid;grid-template-columns:110px 1fr auto;gap:10px;align-items:center;font-size:13.5px;padding:6px 0}
+section.block{padding:88px 0}section.alt{background:var(--wash)}
+.sh{margin-bottom:40px}.sh h2{font-size:clamp(28px,3.2vw,40px);letter-spacing:-.02em}.sh p{font-size:18px;color:var(--c-muted);max-width:62ch;margin:12px 0 0}
+.four{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.four div{border-top:3px solid var(--c-accent);padding-top:18px}
+.four h3{font-size:18px;margin-bottom:8px}.four p{margin:0;font-size:15px}
+@media (max-width:900px){.four{grid-template-columns:1fr 1fr}}
+.diff{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.diff article{background:#fff;border:1px solid var(--c-line);border-radius:10px;padding:26px}
+.diff h3{font-size:19px;margin-bottom:8px}.diff p{margin:0;font-size:15.5px}
+@media (max-width:900px){.diff{grid-template-columns:1fr}}
+.stats{background:var(--deep);color:#AFC0D3}
+.stats .wrap{display:grid;grid-template-columns:repeat(6,1fr);gap:20px;padding-top:56px;padding-bottom:56px}
+.stats b{display:block;font-size:34px;color:#fff;letter-spacing:-.02em}.stats span{font-size:14px}
+@media (max-width:900px){.stats .wrap{grid-template-columns:1fr 1fr}}
+.promo{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+@media (max-width:900px){.promo{grid-template-columns:1fr}}
+.products{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:18px}
+.prod{border:1px solid var(--c-line);border-radius:10px;padding:28px;background:#fff;display:flex;flex-direction:column;gap:12px}
+.prod.f{background:var(--navy);border-color:var(--navy);color:#C9D6E4}.prod.f h3{color:#fff}.prod.f a{color:#fff}
+.tag{align-self:flex-start;font-size:12.5px;font-weight:600;padding:4px 10px;border-radius:20px;background:#E3F3EF;color:#0E5E4E}
+.prod.f .tag{background:rgba(44,165,141,.22);color:#8FE0CD}.tag.soon{background:#FFF1DF;color:#8A4B00}
+.prod h3{font-size:24px}.prod p{margin:0;flex:1}.prod a{font-weight:600}
+.slots{display:flex;flex-wrap:wrap;gap:6px}.slots span{font-size:13px;padding:4px 10px;border:1px dashed #B7C2CF;border-radius:6px}
+@media (max-width:900px){.products{grid-template-columns:1fr}}
+.method{display:grid;grid-template-columns:1fr 1.2fr;gap:56px}
+.mods{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.mods div{background:#fff;border:1px solid var(--c-line);border-radius:8px;padding:14px 16px;font-weight:600;color:var(--c-ink);font-size:15px}
+.mods div:last-child{grid-column:span 2;background:var(--navy);color:#fff}
+@media (max-width:900px){.method{grid-template-columns:1fr}}
+.defs{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.defs div{border:1px solid var(--c-line);border-radius:10px;padding:22px;background:#fff}
+.defs h3{font-size:17px;margin-bottom:6px}.defs p{margin:0;font-size:14.5px}
+@media (max-width:900px){.defs{grid-template-columns:1fr 1fr}}
+.contact{background:var(--c-accent);color:#DDEBF6}
+.contact .wrap{display:grid;grid-template-columns:1fr 1fr;gap:48px;padding-top:72px;padding-bottom:72px}
+.contact h2{color:#fff;font-size:clamp(28px,3vw,38px)}
+.contact dl{margin:0;display:grid;grid-template-columns:90px 1fr;gap:10px 16px}.contact dt{color:#A9C9E3}.contact dd{margin:0;color:#fff}.contact a{color:#fff}
+@media (max-width:860px){.contact .wrap{grid-template-columns:1fr}}
+footer{background:var(--deep);color:#8FA1B6;font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-top:32px;padding-bottom:32px}
+footer a{color:#C3D0DE}
+[data-view="profile"]{background:var(--wash)}
+.back{position:fixed;left:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:60;background:var(--deep);color:#fff;font:600 14px system-ui,sans-serif;padding:0 16px;min-height:44px;display:inline-flex;align-items:center;border-radius:22px;text-decoration:none;border:1px solid rgba(255,255,255,.25)}
+</style>
+</head>
+<body data-mock="Mockup 1: Industry standard">
+<div class="util"><div class="wrap"><a href="#">Client log in</a><a href="#">Careers</a><a href="mailto:info@michaelallencompany.com">info@michaelallencompany.com</a></div></div>
+<header class="nav"><div class="wrap">
+  <a class="logo" href="#/"><b>MICHAEL ALLEN</b><span>COMPANY</span></a>
+  <ul class="links" aria-label="Primary">
+    <li><a href="#/" data-nav="company">Home</a></li>
+    <li class="sec"><a href="#">About Us</a></li>
+    <li class="sec"><a href="#">Market Research</a></li>
+    <li class="sec"><a href="#">Market Access</a></li>
+    <li><a href="#/products" data-nav="hub">Digital Products</a></li>
+    <li><a href="#/wayfinder" data-nav="wayfinder">WayFinder Horizon</a></li>
+  </ul>
+  <a class="btn btn-o" href="#contact">Contact Us</a>
+</div></header>
+
+<main>
+<!-- COMPANY -->
+<div data-view="company">
+  <section class="hero"><div class="wrap">
+    <div>
+      <h1>We derive deeper insights to help healthcare companies make better decisions.</h1>
+      <p>From pipeline to inline, we empower brands to reach their full potential by transforming research and data into real insights, driving long-term impact.</p>
+      <div class="ctas"><a class="btn btn-o" href="#contact">Request a bid</a><a class="btn btn-g" href="#difference">Our difference</a></div>
+    </div>
+    <div class="kpis">
+      <div><b>40+</b><span>years as a trusted advisor</span></div>
+      <div><b>85%</b><span>of the Top 20 Global Pharma Companies</span></div>
+      <div><b>100+</b><span>therapeutic areas of expertise</span></div>
+      <div><b>40+</b><span>countries spanned by our projects</span></div>
+    </div>
+  </div></section>
+  <section class="block"><div class="wrap"><div class="four" id="companyPillars"></div></div></section>
+  <section class="block alt" id="difference"><div class="wrap"><div class="sh"><h2>Our Difference</h2></div><div class="diff" id="companyDiff"></div></div></section>
+  <div class="stats"><div class="wrap" id="companyStats"></div></div>
+  <section class="block"><div class="wrap promo">
+    <div class="sh" style="margin:0"><h2>Digital Intelligence Products</h2><p>Modular, productized intelligence tools designed to support commercial, access, and portfolio decision‑making for biopharma leaders.</p><p style="margin-top:24px"><a class="btn btn-o" href="#/products">Explore Products</a></p></div>
+    <a class="preview" href="#/wayfinder" style="text-decoration:none" aria-label="Open WayFinder Horizon">
+      <div class="pv-bar">WayFinder Horizon · Therapeutic Area Storefront</div>
+      <div class="pv-body" id="companyPreview"></div>
+    </a>
+  </div></section>
+</div>
+
+<!-- HUB -->
+<div data-view="hub" hidden>
+  <section class="hero"><div class="wrap">
+    <div>
+      <div class="crumb"><a href="#/">Michael Allen Company</a> / Digital Products</div>
+      <h1>Strategic Intelligence, Built to Scale</h1>
+      <p>Modular, productized intelligence tools designed to support commercial, access, and portfolio decision‑making for biopharma leaders.</p>
+      <div class="ctas"><a class="btn btn-o" href="#suite">Explore Products</a><a class="btn btn-g" href="#contact">Request a Demo</a></div>
+    </div>
+    <div class="kpis" style="grid-template-columns:1fr">
+      <div><b>85%</b><span>Top 20 Pharma Clients</span></div><div><b>40+</b><span>Countries Covered</span></div><div><b>Executive</b><span>In-House Staffing</span></div>
+    </div>
+  </div></section>
+  <section class="block" id="suite"><div class="wrap">
+    <div class="sh"><h2>Our Product Suite</h2><p>First-class digital intelligence tools built on verified market access and oncology mapping methodologies.</p></div>
+    <div class="products">
+      <article class="prod f"><span class="tag">Market Intelligence</span><h3>WayFinder Horizon</h3><p>A strategic intelligence product delivering standardized market and opportunity overviews to support early decision-making.</p><a href="#/wayfinder">Learn more</a></article>
+      <article class="prod"><span class="tag">Product</span><h3>OncMap</h3><p>[OncMap description]</p><a href="#">Learn more</a></article>
+      <article class="prod"><span class="tag soon">In Development</span><h3>Future Intelligence Module</h3><p>Our digital product portfolio continues to expand across indications, data types, and strategic use cases.</p><div class="slots"><span>Pipeline Strategy</span><span>Access Optimization</span><span>Commercial Planning</span></div></article>
+    </div>
+  </div></section>
+  <section class="block alt"><div class="wrap method">
+    <div class="sh" style="margin:0"><h2>Structured Core Methodologies</h2><p>Designed like modern premium modular suites, our digital intelligence tools are built upon a validated, standardized sequence of analytical frameworks. This structural consistency guarantees unassailable credibility and seamless comparability across every commercial, access, and pipeline module.</p>
+      <div class="four" style="grid-template-columns:1fr 1fr;margin-top:32px" id="hubFeats"></div></div>
+    <div class="mods" id="hubMethods"></div>
+  </div></section>
+</div>
+
+<!-- WAYFINDER -->
+<div data-view="wayfinder" hidden>
+  <section class="hero"><div class="wrap">
+    <div>
+      <div class="crumb"><a href="#/">Michael Allen Company</a> / <a href="#/products">Digital Products</a> / WayFinder Horizon</div>
+      <h1>WayFinder Horizon</h1>
+      <p>Explore comprehensive therapeutic area overviews ranked by MASM Attractiveness Scores. Each profile distills market sizing, unmet need, competitive white space, and payer access into an actionable strategic lens.</p>
+      <div class="ctas"><a class="btn btn-o" href="#store">Browse profiles</a><a class="btn btn-g" href="#contact">Request access</a></div>
+    </div>
+    <div class="kpis" id="wfKpis"></div>
+  </div></section>
+  <section class="block"><div class="wrap"><div class="sh"><h2>How the MASM score works</h2></div><div class="defs" id="wfDefs"></div></div></section>
+  <section class="block alt" id="store"><div class="wrap"><div class="sh"><h2>Therapeutic Area Storefront</h2></div><div data-store></div></div></section>
+</div>
+
+<!-- PROFILE -->
+<div data-view="profile" hidden><div class="pf-root"></div></div>
+</main>
+
+<section class="contact" id="contact"><div class="wrap">
+  <div><h2>Contact Us</h2><p style="font-size:18px;margin-top:12px;max-width:44ch">Explore our difference, or request a bid for your project needs.</p></div>
+  <dl id="contactDl"></dl>
+</div></section>
+<footer><div class="wrap"><span>© 2026 Michael Allen Company. All Rights Reserved.</span><span><a href="#">Privacy Policy</a> · <a href="#">Terms of Use</a> · <a href="#">Cookie Statement</a></span></div></footer>
+<a class="back" href="/">All mockups</a>
+
+<script src="/shared/data.js"></script>
+<script src="/shared/mac.js"></script>
+<script>
+(function(){const M=MAC,C=M.company,H=M.hub,$=id=>document.getElementById(id);
+$('companyPillars').innerHTML=C.pillars.map(p=>`<div><h3>${p.t}</h3><p>${p.d}</p></div>`).join('');
+$('companyDiff').innerHTML=C.difference.map(p=>`<article><h3>${p.t}</h3><p>${p.d}</p></article>`).join('');
+$('companyStats').innerHTML=C.stats.map(s=>`<div><b>${s.v}</b><span>${s.l}</span></div>`).join('');
+const top=[...M.tas].sort((a,b)=>b.masm-a.masm);
+$('companyPreview').innerHTML=top.map(t=>`<div class="pv-row"><span><b style="color:var(--c-ink)">${t.abbr}</b></span><span class="sc-bar"><i style="width:${t.masm}%"></i></span><span class="sc-num">${t.masm}</span></div>`).join('')+`<p style="margin:12px 0 0;font-size:13px;color:var(--c-muted)">MASM Attractiveness Score by therapeutic area</p>`;
+$('hubFeats').innerHTML=H.arch.feats.map(f=>`<div><h3>${f.t}</h3><p>${f.d}</p></div>`).join('');
+$('hubMethods').innerHTML=H.methods.map(m=>`<div>${m}</div>`).join('');
+$('wfKpis').innerHTML=`<div><b>${M.tas.length}</b><span>TAs Profiled</span></div>`+M.storefront.stats.map(s=>`<div><b>${s.v}</b><span>${s.l}</span></div>`).join('');
+$('wfDefs').innerHTML=M.pillarKeys.map(k=>`<div><h3>${M.pillarLabels[k]}</h3><p>${M.storefront.tips[k]}</p></div>`).join('');
+$('contactDl').innerHTML=`<dt>Email</dt><dd><a href="mailto:${C.contact.email}">${C.contact.email}</a></dd><dt>Phone</dt><dd>${C.contact.phone}</dd><dt>Fax</dt><dd>${C.contact.fax}</dd><dt>Address</dt><dd>${C.contact.address}</dd>`;
+})();
+</script>
+</body>
+</html>

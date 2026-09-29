@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Michael Allen Company | Mockup 4</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;800&family=Red+Hat+Text:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/shared/base.css">
+<style>
+:root{--c-ink:#0A2342;--c-text:#3A4656;--c-muted:#5D6979;--c-line:#DCE2E9;--c-accent:#005A8D;--c-ring:#1F8A74;--r:10px;--f-display:'Red Hat Display',system-ui,sans-serif;--navy:#0A2342;--sky:#E6F0F7;--teal:#1F8A74;--orange:#EF8200;--wash:#F5F7FA;
+ box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 150px)}
+body{margin:0;background:#fff;color:var(--c-text);font:17px/1.65 'Red Hat Text',system-ui,-apple-system,'Segoe UI',sans-serif;-webkit-font-smoothing:antialiased}
+:focus-visible{outline:3px solid var(--orange);outline-offset:2px}
+a{color:var(--c-accent)}
+h1,h2,h3{font-family:var(--f-display);color:var(--c-ink);margin:0;line-height:1.15}
+.wrap{max-width:1180px;margin:0 auto;padding:0 28px}
+.topbar{background:var(--navy);color:#C5D3E2;font-size:14px}
+.topbar .wrap{display:flex;gap:24px;justify-content:flex-end;align-items:center;height:38px}.topbar a{color:#C5D3E2;text-decoration:none}
+header.main{background:#fff;border-bottom:1px solid var(--c-line);position:sticky;top:0;z-index:40}
+header.main .wrap{display:flex;align-items:center;height:78px;gap:28px}
+.logo{text-decoration:none;color:var(--navy);line-height:1}.logo b{font:800 19px var(--f-display);letter-spacing:.06em;display:block}.logo span{font-size:11px;letter-spacing:.34em;color:var(--c-muted)}
+.menu{display:flex;gap:2px;margin:0 0 0 auto;list-style:none;padding:0}
+.menu>li{position:relative}
+.menu a{font-weight:500;font-size:15.5px;color:var(--c-ink);padding:0 12px;min-height:44px;display:inline-flex;align-items:center;text-decoration:none;border-radius:6px}
+.menu a[aria-current="page"]{color:var(--c-accent);font-weight:600}
+.dd{display:none;position:absolute;top:100%;left:0;background:#fff;border:1px solid var(--c-line);border-radius:8px;padding:8px;min-width:260px;list-style:none;margin:0;box-shadow:0 18px 30px -18px rgba(10,35,66,.3)}
+.menu li:hover>.dd,.menu li:focus-within>.dd{display:block}.dd a{width:100%}.dd a:hover{background:var(--wash)}
+.book{background:var(--orange);color:#1c1000!important;font-weight:600!important}
+@media (max-width:980px){.menu>li.x{display:none}.topbar{display:none}}
+.shero{background:var(--navy);padding:60px 0 68px;color:#C9D6E4}
+.shero h1{color:#fff;font-size:clamp(34px,4.4vw,56px);margin-bottom:10px}
+.shero .intro{font-size:19px;max-width:62ch;margin:0 0 40px}
+.crumb{font-size:14px;margin-bottom:22px}.crumb a{color:#fff}
+.tiles{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}.tiles.t3{grid-template-columns:repeat(3,1fr)}
+.tile{background:#fff;color:var(--c-text);border-radius:10px;padding:22px;display:flex;flex-direction:column;gap:10px;text-decoration:none;border-top:5px solid var(--teal);min-height:220px;transition:transform .15s}
+.tile:hover{transform:translateY(-3px)}
+.tile:nth-child(2){border-top-color:var(--c-accent)}.tile:nth-child(3){border-top-color:#5C7FA3}.tile:nth-child(4){border-top-color:var(--navy)}.tile:nth-child(5){border-top-color:var(--orange)}
+.tile h2{font-size:20px}.tile p{margin:0;font-size:15px;flex:1}.tile span{font-weight:600;color:var(--c-accent);font-size:15px}
+@media (max-width:1000px){.tiles,.tiles.t3{grid-template-columns:1fr 1fr}}@media (max-width:560px){.tiles,.tiles.t3{grid-template-columns:1fr}}
+.subnav{position:sticky;top:78px;z-index:30;background:#fff;border-bottom:1px solid var(--c-line)}
+.subnav .wrap{display:flex;gap:6px;overflow-x:auto;padding-top:10px;padding-bottom:10px}
+.subnav a{white-space:nowrap;text-decoration:none;color:var(--c-ink);font-weight:500;padding:0 16px;min-height:42px;display:inline-flex;align-items:center;border-radius:22px;border:1px solid var(--c-line);font-size:15px}
+.subnav a:hover{background:var(--sky);color:var(--c-accent)}
+.what{padding:80px 0;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.what h2{font-size:clamp(30px,3.4vw,42px);margin-bottom:16px}.what .strong{font-size:20px;color:var(--c-ink);font-weight:600;margin:0}
+.appr{background:var(--wash);border-radius:12px;padding:30px}.appr h3{font-size:19px;margin-bottom:16px}
+.appr ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:14px}
+.appr li{display:grid;grid-template-columns:28px 1fr;gap:10px}.appr svg{width:24px;height:24px;stroke:var(--teal);fill:none;stroke-width:2.2;margin-top:2px}.appr b{color:var(--c-ink)}
+@media (max-width:860px){.what{grid-template-columns:1fr;gap:28px}}
+.sol{padding:80px 0;border-top:1px solid var(--c-line)}.sol:nth-of-type(even){background:var(--wash)}
+.sol .g{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}.sol.flip .vis{order:-1}
+.kick{font-weight:600;color:var(--teal);font-size:15px;margin-bottom:10px;display:block}
+.sol h2{font-size:clamp(26px,3vw,36px);margin-bottom:16px}.sol p{margin:0 0 16px;max-width:58ch}
+.sol ul{padding:0;margin:0 0 24px;list-style:none;display:flex;flex-direction:column;gap:10px}
+.sol ul li{padding-left:22px;position:relative}.sol ul li::before{content:"";position:absolute;left:0;top:10px;width:9px;height:9px;border-radius:2px;background:var(--teal)}.sol ul b{color:var(--c-ink)}
+@media (max-width:860px){.sol .g{grid-template-columns:1fr;gap:32px}.sol.flip .vis{order:0}}
+.more{display:inline-flex;align-items:center;min-height:46px;padding:0 22px;border-radius:6px;background:var(--c-accent);color:#fff;text-decoration:none;font-weight:600;font-size:16px;border:0;cursor:pointer;font-family:inherit}
+.vis{background:#fff;border:1px solid var(--c-line);border-radius:12px;padding:26px;box-shadow:0 22px 40px -28px rgba(10,35,66,.35)}
+.vrow{display:grid;grid-template-columns:1fr auto;gap:14px;align-items:center;padding:12px 0;border-bottom:1px solid var(--c-line);text-decoration:none;color:var(--c-text)}.vrow:last-child{border-bottom:0}
+.vrow b{color:var(--c-ink)}.vrow small{display:block;color:var(--c-muted);font-size:13.5px}
+.badge{font:800 20px var(--f-display);color:#fff;background:var(--c-accent);border-radius:8px;min-width:56px;height:44px;padding:0 10px;display:grid;place-items:center}
+.flow{display:flex;flex-wrap:wrap;gap:8px}.flow span{padding:10px 14px;border-radius:8px;background:var(--sky);color:var(--c-ink);font-size:14.5px;font-weight:500}.flow span:last-child{background:var(--navy);color:#fff}
+.ph{border:2px dashed #B8C4D1;border-radius:10px;min-height:200px;display:grid;place-items:center;text-align:center;color:var(--c-muted);font-size:15px;padding:24px}
+.big4{display:grid;grid-template-columns:1fr 1fr;gap:12px}.big4 div{background:var(--sky);border-radius:10px;padding:18px}.big4 b{display:block;font:800 30px var(--f-display);color:var(--c-ink)}.big4 span{font-size:14px}
+.call{background:var(--c-accent);color:#DCEAF5;padding:68px 0}
+.call .wrap{display:flex;justify-content:space-between;align-items:center;gap:32px;flex-wrap:wrap}
+.call h2{color:#fff;font-size:clamp(26px,3.2vw,38px);max-width:24ch}.call p{margin:10px 0 0}
+.call a{background:var(--orange);color:#1c1000;min-height:52px;padding:0 30px;display:inline-flex;align-items:center;border-radius:6px;text-decoration:none;font-weight:600}
+.sample{padding:80px 0}.sample .wrap{display:grid;grid-template-columns:1fr 1.1fr;gap:60px;align-items:center}
+.stack{position:relative;height:300px}
+.stack a{position:absolute;width:56%;height:86%;background:#fff;border:1px solid var(--c-line);border-radius:8px;padding:18px;box-shadow:0 20px 34px -24px rgba(10,35,66,.45);text-decoration:none;color:var(--c-text)}
+.stack a:nth-child(1){left:0;top:10%;transform:rotate(-6deg)}.stack a:nth-child(2){left:14%;top:5%;transform:rotate(-2deg)}.stack a:nth-child(3){left:29%;top:2%;transform:rotate(2deg)}.stack a:nth-child(4){left:44%;top:0;transform:rotate(6deg)}
+.stack h3{font-size:15px;margin-bottom:6px}.stack b{font:800 38px var(--f-display);color:var(--c-accent);display:block}.stack small{color:var(--c-muted);font-size:13px}
+form.req{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+form.req label{display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:600;color:var(--c-ink)}form.req .full{grid-column:span 2}
+form.req input,form.req select{font:16px inherit;font-family:inherit;min-height:46px;padding:0 12px;border:1px solid #B3BFCC;border-radius:6px;color:var(--c-ink)}
+form.req .consent{flex-direction:row;align-items:flex-start;gap:10px;font-weight:400;color:var(--c-text)}form.req .consent input{min-height:auto;width:20px;height:20px;margin-top:3px}
+@media (max-width:860px){.sample .wrap{grid-template-columns:1fr}form.req{grid-template-columns:1fr}form.req .full{grid-column:auto}}
+footer{background:var(--navy);color:#9FB1C5;font-size:15px}
+footer .wrap{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:40px;padding-top:52px;padding-bottom:36px}
+footer h3{color:#fff;font-size:16px;margin-bottom:12px}footer ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px}footer a{color:#C9D6E4;text-decoration:none}
+footer .legal{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.12);padding-top:18px;font-size:14px}
+@media (max-width:760px){footer .wrap{grid-template-columns:1fr}}
+.back{position:fixed;left:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:60;background:var(--navy);color:#fff;font:600 14px system-ui,sans-serif;padding:0 16px;min-height:44px;display:inline-flex;align-items:center;border-radius:22px;text-decoration:none;border:1px solid rgba(255,255,255,.25)}
+</style>
+</head>
+<body data-mock="Mockup 4: Solutions layout">
+<div class="topbar"><div class="wrap"><a href="tel:+12036625100">+1.203.662.5100</a><a href="mailto:info@michaelallencompany.com">info@michaelallencompany.com</a><a href="#">Careers</a></div></div>
+<header class="main"><div class="wrap">
+  <a class="logo" href="#/"><b>MICHAEL ALLEN</b><span>COMPANY</span></a>
+  <ul class="menu" aria-label="Primary">
+    <li><a href="#/" data-nav="company">Home</a></li>
+    <li class="x"><a href="#">About Us</a></li>
+    <li class="x"><a href="#/#solutions">Solutions</a><ul class="dd"><li><a href="#">Our Market Research Solutions</a></li><li><a href="#">Our Market Access Solutions</a></li><li><a href="#">Our Expertise</a></li></ul></li>
+    <li><a href="#/products" data-nav="hub">Digital Products</a><ul class="dd"><li><a href="#/wayfinder">WayFinder Horizon</a></li><li><a href="#">OncMap</a></li><li><a href="#/products">Future Intelligence Module</a></li></ul></li>
+    <li><a href="#/wayfinder" data-nav="wayfinder">WayFinder Horizon</a></li>
+    <li><a class="book" href="#call">Contact Us</a></li>
+  </ul>
+</div></header>
+<main>
+<div data-view="company">
+  <section class="shero"><div class="wrap">
+    <h1>We derive deeper insights to help healthcare companies make better decisions.</h1>
+    <p class="intro">From pipeline to inline, we empower brands to reach their full potential by transforming research and data into real insights, driving long-term impact.</p>
+    <div class="tiles" id="solutions">
+      <a class="tile" href="#research"><h2>Market Research</h2><p>Insights uncovered using both primary research and real world data.</p><span>Read more</span></a>
+      <a class="tile" href="#access"><h2>Market Access</h2><p>Tailored solutions, supported by extensive payer network.</p><span>Read more</span></a>
+      <a class="tile" href="#sapphire"><h2>SAPPHIRE®</h2><p>Our latest and fastest growing platform supporting brand health tracking.</p><span>Read more</span></a>
+      <a class="tile" href="#expertise"><h2>Our Expertise</h2><p>Expertise in 100+ therapeutic areas, with significant focus on oncology and orphan diseases.</p><span>Read more</span></a>
+      <a class="tile" href="#/products"><h2>Digital Products</h2><p>Modular, productized intelligence tools for biopharma leaders.</p><span>Read more</span></a>
+    </div>
+  </div></section>
+  <nav class="subnav" aria-label="On this page"><div class="wrap"><a href="#what">Our Difference</a><a href="#research">Market Research</a><a href="#access">Market Access</a><a href="#sapphire">SAPPHIRE®</a><a href="#expertise">Our Expertise</a><a href="#/products">Digital Products</a></div></nav>
+  <div class="wrap what" id="what">
+    <div><h2>Our Difference</h2><p class="strong">We serve a single industry – biopharmaceuticals, focusing specifically on sales and marketing, and driving success through decades of excellence.</p><p style="margin-top:16px">For over 40 years, we’ve been a trusted advisor to the world’s leading companies, delivering results through top talent, client trust, and industry expertise.</p></div>
+    <div class="appr"><h3>Why clients choose us:</h3><ul>
+      <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg><span><b>Proven Record of Excellence.</b> Worked with 85% of the Top 20 Global Pharma Companies.</span></li>
+      <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg><span><b>High Touch, with Global Reach.</b> Projects span 40+ countries, always managed by an Executive and staffed in-house (no off-shoring).</span></li>
+      <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg><span><b>Innovative Research Technology.</b> We advance research and data collection tech for high-quality analyses.</span></li>
+    </ul></div>
+  </div>
+  <section class="sol" id="research"><div class="wrap g">
+    <div><span class="kick">Our Market Research Solutions</span><h2>Experts in Analytics and Integration</h2><p>Insights uncovered using both primary research and real world data.</p><p>[Market research solutions summary from the Market Research Solutions page]</p><a class="more" href="#">Find out more</a></div>
+    <div class="vis"><div class="flow" id="rFlow"></div></div>
+  </div></section>
+  <section class="sol flip" id="access"><div class="wrap g">
+    <div><span class="kick">Our Market Access Solutions</span><h2>Market Access Expertise</h2><p>Tailored solutions, supported by extensive payer network.</p><p>[Market access solutions summary from the Market Access Solutions page]</p><a class="more" href="#">Find out more</a></div>
+    <div class="vis ph">[Market access visual]</div>
+  </div></section>
+  <section class="sol" id="sapphire"><div class="wrap g">
+    <div><span class="kick">Innovative Research Technology</span><h2>SAPPHIRE®</h2><p>SAPPHIRE® is our latest and fastest growing platform supporting brand health tracking.</p><a class="more" href="#">Find out more</a></div>
+    <div class="vis ph">[SAPPHIRE® platform screenshot]</div>
+  </div></section>
+  <section class="sol flip" id="expertise"><div class="wrap g">
+    <div><span class="kick">Our Expertise</span><h2>Extensive Therapeutic Area Coverage</h2><p>With expertise in 100+ therapeutic areas, our comprehensive solutions address over 100 conditions with significant focus on oncology and orphan diseases.</p><a class="more" href="#">Find out more</a></div>
+    <div class="vis big4" id="cStats"></div>
+  </div></section>
+</div>
+
+<div data-view="hub" hidden>
+  <section class="shero"><div class="wrap">
+    <div class="crumb"><a href="#/">Michael Allen Company</a> / Digital Products</div>
+    <h1>Strategic Intelligence, Built to Scale</h1>
+    <p class="intro">Modular, productized intelligence tools designed to support commercial, access, and portfolio decision‑making for biopharma leaders.</p>
+    <div class="tiles t3">
+      <a class="tile" href="#/wayfinder"><h2>WayFinder Horizon</h2><p>Standardized market and opportunity overviews to support early decision-making.</p><span>Read more</span></a>
+      <a class="tile" href="#oncmap"><h2>OncMap</h2><p>[OncMap description]</p><span>Read more</span></a>
+      <a class="tile" href="#future"><h2>Future Intelligence Module</h2><p>In development: Pipeline Strategy, Access Optimization, Commercial Planning.</p><span>Read more</span></a>
+    </div>
+  </div></section>
+  <div class="wrap what">
+    <div><h2>What we do</h2><p class="strong">First-class digital intelligence tools built on verified market access and oncology mapping methodologies.</p><p style="margin-top:16px">85% Top 20 Pharma Clients · 40+ Countries Covered · Executive In-House Staffing</p></div>
+    <div class="appr"><h3>Our tools are built on:</h3><ul id="hFeats"></ul></div>
+  </div>
+  <section class="sol"><div class="wrap g">
+    <div><span class="kick">Market Intelligence</span><h2>WayFinder Horizon</h2><p>A strategic intelligence product delivering standardized market and opportunity overviews to support early decision-making.</p><a class="more" href="#/wayfinder">Find out more</a></div>
+    <div class="vis" id="hWf"></div>
+  </div></section>
+  <section class="sol flip" id="oncmap"><div class="wrap g"><div><span class="kick">Product</span><h2>OncMap</h2><p>[OncMap description]</p><a class="more" href="#">Find out more</a></div><div class="vis ph">[OncMap product screenshot]</div></div></section>
+  <section class="sol" id="future"><div class="wrap g"><div><span class="kick">In Development</span><h2>More Products Coming</h2><p>Our digital product portfolio continues to expand across indications, data types, and strategic use cases.</p><ul><li><b>Pipeline Strategy</b></li><li><b>Access Optimization</b></li><li><b>Commercial Planning</b></li></ul><a class="more" href="#call">Register interest</a></div><div class="vis"><div class="flow" id="hFlow"></div></div></div></section>
+</div>
+
+<div data-view="wayfinder" hidden>
+  <section class="shero"><div class="wrap">
+    <div class="crumb"><a href="#/">Michael Allen Company</a> / <a href="#/products">Digital Products</a> / WayFinder Horizon</div>
+    <h1>WayFinder Horizon</h1>
+    <p class="intro">Explore comprehensive therapeutic area overviews ranked by MASM Attractiveness Scores. Each profile distills market sizing, unmet need, competitive white space, and payer access into an actionable strategic lens.</p>
+    <div class="tiles" id="wTiles" style="grid-template-columns:repeat(4,1fr)"></div>
+  </div></section>
+  <div class="wrap what">
+    <div><h2>How the MASM score works</h2><p class="strong">One attractiveness score, built from four pillars.</p><p style="margin-top:16px" id="wStats"></p></div>
+    <div class="appr"><h3>The four pillars:</h3><ul id="wDefs"></ul></div>
+  </div>
+  <section class="sol" style="border-top:1px solid var(--c-line)"><div class="wrap"><h2 style="font-size:clamp(26px,3vw,36px);margin-bottom:28px">Therapeutic Area Storefront</h2><div data-store></div></div></section>
+  <section class="sample"><div class="wrap">
+    <div class="stack" id="stack" aria-label="Available profiles"></div>
+    <div><h2 style="font-size:clamp(26px,3vw,36px);margin-bottom:10px">Request a sample profile</h2><p style="margin:0 0 22px">See a full WayFinder Horizon overview before you book a call.</p>
+    <form class="req" onsubmit="event.preventDefault();this.querySelector('.more').textContent='Request sent'">
+      <label class="full">Which profile?<select id="sSel"></select></label>
+      <label>Name<input type="text" autocomplete="name"></label><label>Work email<input type="email" autocomplete="email"></label>
+      <label class="full">Company<input type="text" autocomplete="organization"></label>
+      <label class="full consent"><input type="checkbox">I have read the privacy policy and consent to be contacted.</label>
+      <div class="full"><button class="more" type="submit">Send request</button></div>
+    </form></div>
+  </div></section>
+</div>
+
+<div data-view="profile" hidden><div class="pf-root"></div></div>
+</main>
+<section class="call" id="call"><div class="wrap"><div><h2>Explore our difference, or request a bid for your project needs.</h2><p>+1.203.662.5100 · info@michaelallencompany.com</p></div><a href="mailto:info@michaelallencompany.com">Request a bid</a></div></section>
+<footer><div class="wrap">
+  <div><h3>Michael Allen Company</h3><p style="margin:0">30 Old Kings Highway South<br>Darien, CT 06820<br>Phone +1.203.662.5100 · Fax +1.203.662.5180</p></div>
+  <div><h3>Company</h3><ul><li><a href="#">About Us</a></li><li><a href="#">Our Market Research Solutions</a></li><li><a href="#">Our Market Access Solutions</a></li><li><a href="#">Our Expertise</a></li><li><a href="#">Careers</a></li></ul></div>
+  <div><h3>Digital Products</h3><ul><li><a href="#/wayfinder">WayFinder Horizon</a></li><li><a href="#">OncMap</a></li><li><a href="#/products">Product Hub</a></li></ul></div>
+  <div class="legal">© 2026 Michael Allen Company. All Rights Reserved. Privacy Policy, California Privacy Policy, Terms of Use, and Cookie Statement.</div>
+</div></footer>
+<a class="back" href="/">All mockups</a>
+<script src="/shared/data.js"></script>
+<script src="/shared/mac.js"></script>
+<script>
+(function(){const M=MAC,C=M.company,$=id=>document.getElementById(id),chk='<svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg>';
+$('rFlow').innerHTML=M.hub.methods.map(m=>`<span>${m}</span>`).join('');
+$('hFlow').innerHTML=M.hub.roadmap.slots.map(m=>`<span>${m}</span>`).join('')+`<span>Future Intelligence Module</span>`;
+$('cStats').innerHTML=`<div><b>40+</b><span>years as a trusted advisor</span></div><div><b>100+</b><span>therapeutic areas</span></div><div><b>40+</b><span>countries</span></div><div><b>85%</b><span>of Top 20 Global Pharma</span></div>`;
+$('hFeats').innerHTML=M.hub.arch.feats.map(f=>`<li>${chk}<span><b>${f.t}.</b> ${f.d}</span></li>`).join('');
+const top=[...M.tas].sort((a,b)=>b.masm-a.masm);
+$('hWf').innerHTML=top.map(t=>`<a class="vrow" href="#/profile/${t.id}"><div><b>${t.name}</b><small>${t.cat}</small></div><span class="badge">${t.masm}</span></a>`).join('');
+$('wTiles').innerHTML=top.map(t=>`<a class="tile" href="#/profile/${t.id}"><h2>${t.name}</h2><p>${t.cat} · ${t.tier} Tier · Updated ${t.updated}</p><span>MASM ${t.masm}/100</span></a>`).join('');
+$('wStats').textContent=`${M.tas.length} TAs Profiled · `+M.storefront.stats.map(s=>s.v+' '+s.l).join(' · ');
+$('wDefs').innerHTML=M.pillarKeys.map(k=>`<li>${chk}<span><b>${M.pillarLabels[k]}.</b> ${M.storefront.tips[k]}</span></li>`).join('');
+$('stack').innerHTML=M.tas.map(t=>`<a href="#/profile/${t.id}"><h3>${t.abbr}</h3><b>${t.masm}</b><small>MASM score</small></a>`).join('');
+$('sSel').innerHTML=M.tas.map(t=>`<option>${t.name}</option>`).join('');
+})();
+</script>
+</body>
+</html>
